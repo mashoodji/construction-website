@@ -1,0 +1,277 @@
+.navbar {
+  background: var(--secondary);
+  color: white;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.nav-brand h2 {
+  color: var(--primary);
+  font-size: 1.5rem;
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* Desktop Navigation Menu */
+.nav-menu.desktop-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu.desktop-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 0.5rem 0;
+  position: relative;
+  display: block;
+}
+
+.nav-menu.desktop-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-menu.desktop-menu a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger Menu Button */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 8px;
+  width: 30px;
+  height: 30px;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1001;
+  position: relative;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 3px;
+  background: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  border-radius: 2px;
+}
+
+/* Enhanced Hamburger Animation */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+  background: var(--primary);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+  background: var(--primary);
+}
+
+/* Mobile Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(5px);
+  z-index: 998;
+}
+
+/* Mobile Navigation Menu */
+.nav-menu.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background: var(--secondary);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 100px 2rem 2rem;
+  gap: 0;
+  z-index: 999;
+  box-shadow: -5px 0 25px rgba(0,0,0,0.3);
+  margin: 0;
+  list-style: none;
+}
+
+.nav-menu.mobile-menu li {
+  width: 100%;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  opacity: 0;
+}
+
+.nav-menu.mobile-menu a {
+  display: block;
+  padding: 1.2rem 0;
+  width: 100%;
+  font-size: 1.1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-menu.mobile-menu a:hover {
+  color: var(--primary);
+  padding-left: 10px;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablets and Mobile (768px and below) */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu.desktop-menu {
+    display: none;
+  }
+}
+
+/* Desktop (769px and above) */
+@media (min-width: 769px) {
+  .nav-menu.mobile-menu {
+    display: none;
+  }
+  
+  .menu-overlay {
+    display: none;
+  }
+}
+
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+    z-index: 999;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--secondary);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 80px 2rem 2rem;
+    gap: 0;
+    transition: right 0.3s ease;
+    z-index: 999;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 1rem 0;
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  .nav-menu a::after {
+    display: none;
+  }
+
+  .nav-brand h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Small Tablets (600px and below) */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.8rem 0;
+  }
+  
+  .nav-brand h2 {
+    font-size: 1.2rem;
+  }
+  
+  .nav-menu {
+    width: 250px;
+  }
+}
+
+/* Mobile Phones (480px and below) */
+@media (max-width: 480px) {
+  .nav-brand h2 {
+    font-size: 1.1rem;
+  }
+  
+  .nav-menu {
+    width: 100%;
+    right: -100%;
+  }
+  
+  .navbar .container {
+    padding: 0 15px;
+  }
+}
+
+/* Large Desktops (1200px and above) */
+@media (min-width: 1200px) {
+  .nav-menu {
+    gap: 2.5rem;
+  }
+  
+  .nav-brand h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Extra Large Screens (1400px and above) */
+@media (min-width: 1400px) {
+  .navbar .container {
+    max-width: 1300px;
+  }
+}

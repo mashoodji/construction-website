@@ -1,0 +1,269 @@
+.ceo-message-page {
+  margin-top: 80px;
+  padding: 2rem 0;
+}
+
+.ceo-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.ceo-header h1 {
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+}
+
+.ceo-title {
+  color: var(--primary);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.ceo-content {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+.ceo-image {
+  position: relative;
+  perspective: 1000px;
+}
+
+.placeholder-image {
+  height: 400px;
+  background: linear-gradient(135deg, var(--light) 0%, #e8f4f8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-weight: 500;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,180,0,0.9) 0%, rgba(45,62,80,0.9) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ceo-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--primary);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 5px 15px rgba(255, 180, 0, 0.5);
+}
+
+.ceo-message h2 {
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.ceo-message p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+/* Core Values */
+.core-values {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: var(--light);
+  border-radius: 15px;
+}
+
+.core-values h3 {
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.values-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.value-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.value-item h4 {
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.value-item p {
+  color: var(--text-light);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Signature */
+.ceo-signature {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--primary);
+  text-align: center;
+}
+
+.signature-line {
+  height: 2px;
+  background: var(--primary);
+  margin: 0 auto 1.5rem;
+  max-width: 200px;
+}
+
+.ceo-signature p {
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.ceo-signature p:first-of-type {
+  font-weight: bold;
+  color: var(--secondary);
+  font-size: 1.2rem;
+}
+
+.signature-date {
+  color: var(--text-light) !important;
+  font-size: 0.9rem !important;
+  margin-top: 0.5rem;
+}
+
+/* Call to Action */
+.ceo-cta {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.ceo-cta h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.ceo-cta p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ceo-cta .btn {
+  background: var(--primary);
+  color: var(--dark);
+  font-size: 1.1rem;
+  padding: 1rem 2.5rem;
+}
+
+/* Responsive CEO Message */
+@media (min-width: 768px) {
+  .ceo-content {
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+  }
+  
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .values-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .ceo-header h1 {
+    font-size: 2rem;
+  }
+  
+  .ceo-title {
+    font-size: 1.1rem;
+  }
+  
+  .ceo-message h2 {
+    font-size: 1.5rem;
+  }
+  
+  .placeholder-image {
+    height: 300px;
+  }
+  
+  .core-values {
+    padding: 1.5rem;
+  }
+  
+  .ceo-cta {
+    padding: 2rem 1.5rem;
+  }
+  
+  .ceo-cta h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ceo-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .placeholder-image {
+    height: 250px;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}

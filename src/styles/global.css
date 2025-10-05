@@ -1,0 +1,90 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Construction theme colors */
+:root {
+  --primary: #ffb400;
+  --secondary: #2d3e50;
+  --accent: #e74c3c;
+  --light: #f9f9f9;
+  --dark: #2c3e50;
+  --text: #333333;
+  --text-light: #666666;
+}
+
+/* Container for responsive layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Common component styles */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: var(--primary);
+  color: var(--dark);
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn:hover {
+  background: #e6a200;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #253445;
+}
+
+/* Mobile First Responsive Design */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 25px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 15px;
+  }
+}
