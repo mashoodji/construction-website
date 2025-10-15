@@ -38,159 +38,159 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Modern Luxury Villa",
+      title: "Modern Luxury Villa - DHA Lahore",
       category: "residential",
       status: "completed",
       year: "2023",
-      description: "Contemporary luxury villa with sustainable design features and smart home technology.",
+      description: "Contemporary luxury villa with premium finishes and modern amenities in Defence Housing Authority.",
       image: project1,
-      features: ["Smart Home Automation", "Sustainable Materials", "Infinity Pool", "Landscaped Gardens"],
-      location: "Beverly Hills, CA",
-      duration: "18 Months",
-      budget: "$4.2M"
+      features: ["Smart Home Automation", "Marble Flooring", "Swimming Pool", "Landscaped Gardens", "Modular Kitchen"],
+      location: "DHA Phase 6, Lahore",
+      duration: "14 Months",
+      budget: "PKR 4.2 Crore"
     },
     {
       id: 2,
-      title: "Downtown Office Complex",
+      title: "Corporate Office Tower - Gulberg",
       category: "commercial",
       status: "in-progress",
       year: "2024",
-      description: "12-story commercial office building with LEED certification in downtown business district.",
+      description: "8-story commercial office building with modern facilities in prime business district.",
       image: project2,
-      features: ["LEED Certified", "Underground Parking", "Rooftop Garden", "Smart Building Systems"],
-      location: "New York, NY",
-      duration: "24 Months",
-      budget: "$15.8M"
+      features: ["Central AC System", "Elevators", "Basement Parking", "Conference Rooms", "Cafeteria"],
+      location: "Main Boulevard Gulberg, Lahore",
+      duration: "20 Months",
+      budget: "PKR 12.5 Crore"
     },
     {
       id: 3,
-      title: "Regional Shopping Center",
+      title: "Emporium Shopping Mall",
       category: "commercial",
       status: "completed",
       year: "2024",
-      description: "Modern shopping mall with 50+ stores, food court, and entertainment facilities.",
+      description: "Modern shopping complex with 40+ stores, food court, and entertainment facilities.",
       image: project3,
-      features: ["50+ Retail Stores", "Food Court", "Cinema Complex", "Ample Parking"],
-      location: "Austin, TX",
-      duration: "20 Months",
-      budget: "$12.3M"
+      features: ["40+ Retail Outlets", "Food Court", "Cinema", "Ample Parking", "Security Systems"],
+      location: "Johar Town, Lahore",
+      duration: "18 Months",
+      budget: "PKR 9.8 Crore"
     },
     {
       id: 4,
-      title: "Industrial Storage Facility",
+      title: "Industrial Warehouse - Sundar Industrial Estate",
       category: "industrial",
       status: "completed",
       year: "2023",
-      description: "50,000 sq ft industrial warehouse with advanced logistics and storage systems.",
+      description: "40,000 sq ft industrial storage facility with advanced logistics systems.",
       image: project4,
-      features: ["Climate Control", "Advanced Security", "Loading Docks", "Office Space"],
-      location: "Chicago, IL",
-      duration: "14 Months",
-      budget: "$8.7M"
+      features: ["Steel Structure", "Loading Bays", "Office Space", "Security Systems", "Fire Safety"],
+      location: "Sundar Industrial Estate, Lahore",
+      duration: "12 Months",
+      budget: "PKR 3.5 Crore"
     },
     {
       id: 5,
-      title: "Luxury Apartment Complex",
+      title: "Apartment Complex - Bahria Town",
       category: "residential",
       status: "in-progress",
       year: "2024",
-      description: "80-unit luxury apartment building with premium amenities and city views.",
+      description: "60-unit luxury apartment building with modern amenities and community facilities.",
       image: project5,
-      features: ["Swimming Pool", "Fitness Center", "Rooftop Lounge", "Concierge Service"],
-      location: "Miami, FL",
-      duration: "22 Months",
-      budget: "$9.5M"
+      features: ["Swimming Pool", "Gym", "Children Play Area", "24/7 Security", "Parking Spaces"],
+      location: "Bahria Town, Lahore",
+      duration: "24 Months",
+      budget: "PKR 15.2 Crore"
     },
     {
       id: 6,
-      title: "Beachfront Hotel Resort",
+      title: "Five-Star Hotel Project",
       category: "commercial",
       status: "planned",
       year: "2025",
-      description: "Luxury beachfront hotel and resort with spa, restaurants, and conference facilities.",
+      description: "Luxury hotel with premium amenities, restaurants, and banquet facilities.",
       image: project6,
-      features: ["Ocean Views", "Spa & Wellness", "Multiple Restaurants", "Conference Center"],
-      location: "Maui, HI",
+      features: ["200 Rooms", "Swimming Pool", "Banquet Hall", "Restaurants", "Spa"],
+      location: "MM Alam Road, Lahore",
       duration: "30 Months",
-      budget: "$25M"
+      budget: "PKR 45 Crore"
     },
     {
       id: 7,
-      title: "Community Church",
+      title: "Community Mosque - Model Town",
       category: "religious",
       status: "completed",
       year: "2023",
-      description: "Modern church building with traditional architectural elements and community spaces.",
+      description: "Beautiful mosque with traditional Islamic architecture and modern facilities.",
       image: project7,
-      features: ["Main Sanctuary", "Community Hall", "Educational Wings", "Landscaped Grounds"],
-      location: "Seattle, WA",
-      duration: "16 Months",
-      budget: "$3.8M"
+      features: ["Main Prayer Hall", "Ablution Area", "Library", "Air Conditioning", "Parking"],
+      location: "Model Town, Lahore",
+      duration: "10 Months",
+      budget: "PKR 2.1 Crore"
     },
     {
       id: 8,
-      title: "Highway Infrastructure",
+      title: "Ring Road Infrastructure Project",
       category: "infrastructure",
       status: "in-progress",
       year: "2024",
-      description: "Major highway expansion project with bridges and interchanges.",
+      description: "Major road infrastructure development with bridges and interchanges.",
       image: project8,
-      features: ["6-Lane Highway", "3 Bridges", "Smart Traffic System", "Eco-Friendly Design"],
-      location: "Denver, CO",
-      duration: "36 Months",
-      budget: "$45M"
+      features: ["4-Lane Highway", "Bridges", "Drainage System", "Street Lighting", "Landscaping"],
+      location: "Lahore Ring Road",
+      duration: "28 Months",
+      budget: "PKR 85 Crore"
     },
     {
       id: 9,
-      title: "University Campus Building",
+      title: "University Academic Block",
       category: "educational",
       status: "completed",
       year: "2023",
-      description: "State-of-the-art educational facility for engineering and technology programs.",
+      description: "Modern educational facility with classrooms, labs, and administrative offices.",
       image: project9,
-      features: ["Research Labs", "Lecture Halls", "Collaborative Spaces", "Green Roof"],
-      location: "Boston, MA",
-      duration: "28 Months",
-      budget: "$18.2M"
+      features: ["Classrooms", "Computer Labs", "Library", "Faculty Offices", "Common Areas"],
+      location: "University of Lahore",
+      duration: "16 Months",
+      budget: "PKR 7.8 Crore"
     },
     {
       id: 10,
-      title: "Medical Center",
+      title: "Medical Hospital Extension",
       category: "healthcare",
       status: "planned",
       year: "2025",
-      description: "Comprehensive healthcare facility with specialized treatment centers.",
+      description: "Healthcare facility expansion with specialized departments and modern equipment.",
       image: project10,
-      features: ["Emergency Department", "Surgical Suites", "Diagnostic Center", "Patient Gardens"],
-      location: "Phoenix, AZ",
-      duration: "32 Months",
-      budget: "$32.5M"
+      features: ["Emergency Ward", "Operation Theaters", "ICU", "Patient Rooms", "Diagnostic Center"],
+      location: "Shalimar Hospital, Lahore",
+      duration: "22 Months",
+      budget: "PKR 18.5 Crore"
     },
     {
       id: 11,
-      title: "Sports Complex",
+      title: "Sports Complex - WAPDA Town",
       category: "sports",
       status: "completed",
       year: "2023",
-      description: "Multi-purpose sports facility with indoor and outdoor venues.",
+      description: "Multi-purpose sports facility for community use and professional training.",
       image: project11,
-      features: ["Olympic Pool", "Indoor Arena", "Fitness Center", "Sports Medicine"],
-      location: "Atlanta, GA",
-      duration: "26 Months",
-      budget: "$21.8M"
+      features: ["Cricket Ground", "Tennis Courts", "Swimming Pool", "Gymnasium", "Changing Rooms"],
+      location: "WAPDA Town, Lahore",
+      duration: "14 Months",
+      budget: "PKR 6.3 Crore"
     },
     {
       id: 12,
-      title: "Mixed-Use Development",
+      title: "Mixed-Use Commercial Plaza",
       category: "commercial",
       status: "in-progress",
       year: "2024",
-      description: "Integrated development with retail, office, and residential spaces.",
+      description: "Integrated commercial development with retail, office, and food court spaces.",
       image: project12,
-      features: ["Retail Spaces", "Office Towers", "Residential Units", "Public Plaza"],
-      location: "San Francisco, CA",
-      duration: "40 Months",
-      budget: "$65M"
+      features: ["Retail Shops", "Office Spaces", "Food Court", "Parking Plaza", "Security"],
+      location: "Ferozepur Road, Lahore",
+      duration: "20 Months",
+      budget: "PKR 22 Crore"
     }
   ];
 
@@ -311,7 +311,7 @@ const Projects = () => {
           className="projects-intro"
           variants={itemVariants}
         >
-          Explore our diverse portfolio of successful construction projects across various sectors and categories.
+          Explore our diverse portfolio of successful construction projects across Pakistan, showcasing our commitment to quality and excellence in building the nation's infrastructure.
         </motion.p>
         
         {/* Filter Buttons */}
@@ -340,7 +340,7 @@ const Projects = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          Showing {filteredProjects.length} of {projects.length} projects
+          Showing {filteredProjects.length} of {projects.length} projects across Pakistan
         </motion.div>
         
         {/* Projects Grid */}

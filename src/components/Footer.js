@@ -249,19 +249,19 @@ const Footer = () => {
             <p className="copyright">&copy; {currentYear} Meezan Developers. All rights reserved.</p>
             <div className="footer-bottom-links">
               <motion.a 
-                href="/privacy"
+                // href="/privacy"
                 whileHover={{ color: "#f59e0b" }}
               >
                 Privacy Policy
               </motion.a>
               <motion.a 
-                href="/terms"
+                // href="/terms"
                 whileHover={{ color: "#f59e0b" }}
               >
                 Terms of Service
               </motion.a>
               <motion.a 
-                href="/sitemap"
+                // href="/sitemap"
                 whileHover={{ color: "#f59e0b" }}
               >
                 Sitemap

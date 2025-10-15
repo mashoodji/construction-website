@@ -6,119 +6,120 @@ import '../styles/Blog.css';
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  // Complete blog posts database
+  // Pakistan-specific blog posts
   const blogPosts = [
     {
       id: 1,
-      title: "10 Essential Questions to Ask Before Hiring a Construction Company",
-      excerpt: "Make an informed decision when choosing your construction partner with these critical questions about experience, pricing, and project management.",
-      category: "tips",
+      title: "Construction Cost in Pakistan 2025: Complete Guide",
+      excerpt: "Detailed breakdown of construction costs per square foot in major Pakistani cities including Lahore, Karachi, and Islamabad.",
+      category: "costing",
       date: "2025-01-20",
-      readTime: "6 min read",
-      image: "❓",
-      author: "Sarah Johnson",
-      tags: ["hiring", "tips", "selection"]
+      readTime: "8 min read",
+      image: "💰",
+      author: "Ahmed Raza",
+      tags: ["cost", "pricing", "budget", "pakistan"]
     },
     {
       id: 2,
-      title: "Sustainable Building: Eco-Friendly Materials for Modern Construction",
-      excerpt: "Discover the latest sustainable materials that reduce environmental impact while delivering superior performance and durability.",
-      category: "sustainability",
+      title: "Building Materials Price List in Pakistan 2025",
+      excerpt: "Current market rates for cement, steel, bricks, and other essential construction materials across Pakistan.",
+      category: "materials",
       date: "2025-01-15",
-      readTime: "8 min read",
-      image: "🌿",
-      author: "Mike Chen",
-      tags: ["sustainability", "materials", "eco-friendly"]
+      readTime: "6 min read",
+      image: "🏗️",
+      author: "Sara Khan",
+      tags: ["materials", "cement", "steel", "prices"]
     },
     {
       id: 3,
-      title: "Construction Cost Breakdown: Understanding Your Project Budget",
-      excerpt: "A detailed look at where your construction dollars go, from materials and labor to permits and unexpected expenses.",
-      category: "budgeting",
+      title: "LDA & CDA Building Regulations 2025",
+      excerpt: "Complete guide to LDA Lahore and CDA Islamabad building codes, permits, and approval processes.",
+      category: "regulations",
       date: "2025-01-10",
       readTime: "7 min read",
-      image: "💰",
-      author: "Emily Davis",
-      tags: ["budget", "cost", "planning"]
+      image: "📋",
+      author: "Bilal Ahmed",
+      tags: ["LDA", "CDA", "permits", "regulations"]
     },
     {
       id: 4,
-      title: "The Complete Home Renovation Timeline: What to Expect",
-      excerpt: "From initial consultation to final walkthrough, understand each phase of your home renovation project timeline.",
-      category: "renovation",
+      title: "Monsoon-Proof Construction in Pakistan",
+      excerpt: "Essential techniques to protect your construction from heavy rains and flooding during monsoon season.",
+      category: "weather",
       date: "2025-01-05",
       readTime: "5 min read",
-      image: "📅",
-      author: "John Smith",
-      tags: ["renovation", "timeline", "planning"]
+      image: "🌧️",
+      author: "Zainab Malik",
+      tags: ["monsoon", "weather", "protection", "pakistan"]
     },
     {
       id: 5,
-      title: "Building Safety Standards Every Homeowner Should Know",
-      excerpt: "Key safety protocols and building codes that ensure your construction project meets all regulatory requirements.",
-      category: "safety",
+      title: "Energy Efficient Home Design for Pakistani Climate",
+      excerpt: "How to design homes that stay cool in summer and warm in winter while reducing electricity bills.",
+      category: "sustainability",
       date: "2024-12-28",
       readTime: "6 min read",
-      image: "🦺",
-      author: "David Wilson",
-      tags: ["safety", "codes", "regulations"]
+      image: "🌞",
+      author: "Usman Ali",
+      tags: ["energy", "design", "cooling", "pakistan"]
     },
     {
       id: 6,
-      title: "Smart Home Technology Integration in New Construction",
-      excerpt: "How to seamlessly incorporate smart home features during construction for maximum efficiency and convenience.",
-      category: "technology",
+      title: "Hiring Contractors in Pakistan: Complete Guide",
+      excerpt: "How to verify contractor licenses, check references, and avoid common scams in Pakistani construction industry.",
+      category: "tips",
       date: "2024-12-20",
       readTime: "9 min read",
-      image: "🏠",
-      author: "Lisa Brown",
-      tags: ["smart home", "technology", "automation"]
+      image: "👷",
+      author: "Fatima Noor",
+      tags: ["contractors", "hiring", "verification", "pakistan"]
     },
     {
       id: 7,
-      title: "Commercial vs Residential Construction: Key Differences",
-      excerpt: "Understanding the fundamental differences between commercial and residential construction projects.",
-      category: "education",
+      title: "Earthquake Resistant Construction in Pakistan",
+      excerpt: "Building techniques and materials that can withstand seismic activity in earthquake-prone regions of Pakistan.",
+      category: "safety",
       date: "2024-12-15",
-      readTime: "5 min read",
+      readTime: "7 min read",
       image: "🏢",
-      author: "Sarah Johnson",
-      tags: ["commercial", "residential", "differences"]
+      author: "Omar Farooq",
+      tags: ["earthquake", "safety", "structure", "pakistan"]
     },
     {
       id: 8,
-      title: "Weather-Proofing Your Construction Project",
-      excerpt: "Essential strategies to protect your construction project from weather-related delays and damage.",
-      category: "tips",
+      title: "Traditional vs Modern Construction in Pakistan",
+      excerpt: "Comparing traditional Pakistani building methods with modern construction techniques and their pros/cons.",
+      category: "methods",
       date: "2024-12-10",
-      readTime: "4 min read",
-      image: "⛈️",
-      author: "Mike Chen",
-      tags: ["weather", "protection", "planning"]
+      readTime: "8 min read",
+      image: "🔄",
+      author: "Ayesha Siddiqui",
+      tags: ["traditional", "modern", "comparison", "pakistan"]
     },
     {
       id: 9,
-      title: "The Rise of Modular Construction: Benefits and Considerations",
-      excerpt: "Exploring the advantages of modular construction methods for faster, more efficient building projects.",
-      category: "innovation",
+      title: "Solar System Integration in Pakistani Homes",
+      excerpt: "Complete guide to integrating solar panels and inverters in new construction projects across Pakistan.",
+      category: "technology",
       date: "2024-12-05",
-      readTime: "7 min read",
-      image: "🏗️",
-      author: "John Smith",
-      tags: ["modular", "innovation", "efficiency"]
+      readTime: "6 min read",
+      image: "☀️",
+      author: "Haris Mahmood",
+      tags: ["solar", "energy", "inverter", "pakistan"]
     }
   ];
 
   const categories = [
     { id: 'all', name: 'All Posts', count: blogPosts.length },
-    { id: 'tips', name: 'Expert Tips', count: blogPosts.filter(post => post.category === 'tips').length },
+    { id: 'costing', name: 'Costing Guide', count: blogPosts.filter(post => post.category === 'costing').length },
+    { id: 'materials', name: 'Materials', count: blogPosts.filter(post => post.category === 'materials').length },
+    { id: 'regulations', name: 'Regulations', count: blogPosts.filter(post => post.category === 'regulations').length },
+    { id: 'weather', name: 'Weather Proofing', count: blogPosts.filter(post => post.category === 'weather').length },
     { id: 'sustainability', name: 'Sustainability', count: blogPosts.filter(post => post.category === 'sustainability').length },
-    { id: 'budgeting', name: 'Budgeting', count: blogPosts.filter(post => post.category === 'budgeting').length },
-    { id: 'renovation', name: 'Renovation', count: blogPosts.filter(post => post.category === 'renovation').length },
+    { id: 'tips', name: 'Expert Tips', count: blogPosts.filter(post => post.category === 'tips').length },
     { id: 'safety', name: 'Safety', count: blogPosts.filter(post => post.category === 'safety').length },
-    { id: 'technology', name: 'Technology', count: blogPosts.filter(post => post.category === 'technology').length },
-    { id: 'education', name: 'Education', count: blogPosts.filter(post => post.category === 'education').length },
-    { id: 'innovation', name: 'Innovation', count: blogPosts.filter(post => post.category === 'innovation').length }
+    { id: 'methods', name: 'Methods', count: blogPosts.filter(post => post.category === 'methods').length },
+    { id: 'technology', name: 'Technology', count: blogPosts.filter(post => post.category === 'technology').length }
   ];
 
   const filteredPosts = selectedCategory === 'all' 
@@ -140,14 +141,14 @@ const Blog = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
-            Construction Insights & Tips
+            Pakistan Construction Guide
           </motion.h1>
           <motion.p
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Expert advice, industry trends, and practical tips for your construction projects
+            Expert construction advice, costs, and regulations specific to Pakistan
           </motion.p>
         </div>
 
@@ -198,9 +199,9 @@ const Blog = () => {
                 <p className="blog-excerpt">{post.excerpt}</p>
                 
                 <div className="blog-footer">
-                  <span className="blog-author">By {post.author}</span>
+                  {/* <span className="blog-author">By {post.author}</span> */}
                   <Link to={`/blog/${post.id}`} className="read-more">
-                    Read More →
+                    View Details →
                   </Link>
                 </div>
               </div>
@@ -208,17 +209,26 @@ const Blog = () => {
           ))}
         </motion.div>
 
-        {/* Newsletter Signup */}
+        {/* Pakistan-Specific Newsletter */}
         <motion.div 
           className="blog-newsletter"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <h3>Stay Updated with Construction Insights</h3>
-          <p>Get the latest tips and industry trends delivered to your inbox</p>
+          <h3>Pakistan Construction Updates</h3>
+          <p>Get latest material prices, regulations, and construction tips specific to Pakistan</p>
           <form className="newsletter-form">
             <input type="email" placeholder="Enter your email address" />
+            <select>
+              <option value="">Select City</option>
+              <option value="lahore">Lahore</option>
+              <option value="karachi">Karachi</option>
+              <option value="islamabad">Islamabad</option>
+              <option value="rawalpindi">Rawalpindi</option>
+              <option value="faisalabad">Faisalabad</option>
+              <option value="multan">Multan</option>
+            </select>
             <button type="submit">Subscribe</button>
           </form>
         </motion.div>

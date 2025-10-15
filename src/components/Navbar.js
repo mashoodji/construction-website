@@ -226,12 +226,14 @@ const Navbar = () => {
       path: '/services', 
       icon: '🛠️',
       submenu: [
-        { name: 'Construction Services', path: '/services', icon: '🏗️' },
-        { name: 'Architectural Design Services', path: '/architectural-design', icon: '📐' }
+        { name: 'Commercial Construction', path: '/services', icon: '🏢' },
+        { name: 'Renovation & Remodeling', path: '/architectural-design', icon: '🔨' },
       ]
     },
     { name: 'Projects', path: '/projects', icon: '📦' },
+    { name: 'Blog', path: '/blog', icon: '📝', }, // Added Blog
     { name: 'CEO Message', path: '/ceo-message', icon: '💼' },
+    { name: 'Cost-Price', path: '/construction-cost', icon: '💲' },
     { name: 'Contact', path: '/contact', icon: '📞' }
   ];
 
@@ -526,6 +528,25 @@ const Navbar = () => {
                     </motion.li>
                   ))}
                 </motion.ul>
+
+                {/* Drawer Footer with CTA */}
+                {/* <motion.div 
+                  className="drawer-footer"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8 }}
+                >
+                  <p>Ready to start your project?</p>
+                  <motion.a
+                    href="/contact"
+                    className="btn btn-primary"
+                    onClick={closeMenu}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Get Free Quote
+                  </motion.a>
+                </motion.div> */}
               </motion.div>
             </>
           )}

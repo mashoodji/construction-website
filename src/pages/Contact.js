@@ -27,6 +27,38 @@ const Contact = () => {
   };
 
   useEffect(() => {
+    const initializeMap = () => {
+      if (!mapRef.current) return;
+
+      const mapContainer = mapRef.current;
+      
+      mapContainer.innerHTML = '';
+      
+      const mapContent = document.createElement('div');
+      mapContent.className = 'map-content';
+      mapContent.innerHTML = `
+        <div class="map-icon">📍</div>
+        <h3>Our Location</h3>
+        <p class="company-address">${companyLocation.address}</p>
+        <div class="map-actions">
+          <a href="https://maps.google.com/?q=${encodeURIComponent(companyLocation.address)}" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="map-link">
+            🗺️ View on Map
+          </a>
+          <a href="https://www.google.com/maps/dir//${encodeURIComponent(companyLocation.address)}" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="map-link directions">
+            🧭 Get Directions
+          </a>
+        </div>
+      `;
+      
+      mapContainer.appendChild(mapContent);
+    };
+
     if (location.state?.selectedService) {
       const service = location.state.selectedService;
       setSelectedService(service);
@@ -40,41 +72,9 @@ const Contact = () => {
     initializeMap();
   }, [location.state]);
 
-  const initializeMap = () => {
-    if (!mapRef.current) return;
-
-    const mapContainer = mapRef.current;
-    
-    mapContainer.innerHTML = '';
-    
-    const mapContent = document.createElement('div');
-    mapContent.className = 'map-content';
-    mapContent.innerHTML = `
-      <div class="map-icon">📍</div>
-      <h3>Our Location</h3>
-      <p class="company-address">${companyLocation.address}</p>
-      <div class="map-actions">
-        <a href="https://maps.google.com/?q=${encodeURIComponent(companyLocation.address)}" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           class="map-link">
-          🗺️ View on Map
-        </a>
-        <a href="https://www.google.com/maps/dir//${encodeURIComponent(companyLocation.address)}" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           class="map-link directions">
-          🧭 Get Directions
-        </a>
-      </div>
-    `;
-    
-    mapContainer.appendChild(mapContent);
-  };
-
   const showNotification = (message, type = 'info') => {
     setSubmitStatus({ message, type });
-    setTimeout(() => setSubmitStatus(null), 8000); // Increased timeout for better readability
+    setTimeout(() => setSubmitStatus(null), 8000);
   };
 
   const handleChange = (e) => {
@@ -115,7 +115,7 @@ const Contact = () => {
       );
       
       showNotification(
-        `🎉 Thank you ${formData.name}! Your ${formData.service} quote request has been sent successfully. We'll contact you within 24 hours.`,
+        `🎉 Thank you ${formData.name}! Your ${formData.service} request has been sent successfully. We'll contact you within 24 hours.`,
         'success'
       );
       
@@ -131,7 +131,6 @@ const Contact = () => {
     } catch (error) {
       console.error('Email sending failed:', error);
       
-      // Enhanced fallback with contact information
       if (error.text && error.text.includes('limit')) {
         showNotification(
           `📧 Email limit reached! For immediate assistance, please contact us directly:\n\n` +
@@ -144,8 +143,8 @@ const Contact = () => {
       } else {
         showNotification(
           `📧 Thank you for your inquiry! For immediate assistance, please contact us directly:\n\n` +
-          `📞 Call: +92 (300) 123-4567\n` +
-          `📱 WhatsApp: +92 (311) 178-6646\n` +
+          `📞 Call: +92 (321) 883-6371\n` +
+          `📱 WhatsApp: +92 (321) 883-6371\n` +
           `✉️ Email: meezandevelopers.official@gmail.com\n\n` +
           `We've received your ${formData.service} request and will respond shortly.`,
           'info'
@@ -191,14 +190,14 @@ const Contact = () => {
     {
       icon: "📞",
       title: "Contact Numbers",
-      details: "Mobile: +92 (321) 883-6371\nWhatsApp: +92 (311) 178-6646",
+      details: "Mobile: +92 (321) 883-6371\nWhatsApp: +92 (321) 883-6371",
       delay: 0.2,
       highlight: false
     },
     {
       icon: "✉️",
       title: "Email Address",
-      details: "meezandevelopers.official@gmail.com\ninfo@construction.com",
+      details: "meezandevelopers.official@gmail.com",
       delay: 0.3,
       highlight: false
     },
@@ -248,7 +247,7 @@ const Contact = () => {
           </motion.p>
         </motion.div>
 
-        {/* Status Notification - Enhanced for mobile */}
+        {/* Status Notification */}
         <AnimatePresence>
           {submitStatus && (
             <motion.div
@@ -395,7 +394,7 @@ const Contact = () => {
               variants={itemVariants}
             >
               <motion.a 
-                href="tel:+92-3 111 786 646"
+                href="tel:+923218836371"
                 className="quick-btn call"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -403,7 +402,7 @@ const Contact = () => {
                 📞 Call Now
               </motion.a>
               <motion.a 
-                href="https://wa.me/+92-321 88 36 37 1"
+                href="https://wa.me/923218836371"
                 className="quick-btn whatsapp"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -479,7 +478,7 @@ const Contact = () => {
                   <input 
                     type="tel" 
                     name="phone"
-                    placeholder="+92 300 1234567" 
+                    placeholder="+92 321 8836371" 
                     value={formData.phone}
                     onChange={handleChange}
                   />
@@ -554,16 +553,6 @@ const Contact = () => {
                   </>
                 )}
               </motion.button>
-
-              {/* Alternative Contact Info */}
-              {/* <div className="alternative-contact">
-                <p>Prefer to contact directly?</p>
-                <div className="direct-contact-info">
-                  <span>📞 +92 (300) 123-4567</span>
-                  <span>💬 +92 (300) 123-4567</span>
-                  <span>✉️ meezandevelopers.official@gmail.com</span>
-                </div>
-              </div> */}
             </motion.form>
           </motion.div>
         </motion.div>

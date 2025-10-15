@@ -9,6 +9,9 @@ import Services from './pages/Services';
 import ArchitecturalDesign from './pages/ArchitecturalDesign';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost'; 
+import ConstructionCost from './pages/ConstructionCost';
 import CEOMessagePage from './pages/CEOMessagePage';
 import './styles/global.css';
 
@@ -60,6 +63,32 @@ function App() {
                   </motion.div>
                 } 
               />
+              <Route 
+                path="/blog" 
+                element={
+                  <motion.div {...pageTransition}>
+                    <Blog />
+                  </motion.div>
+                } 
+              />
+              <Route 
+                path="/blog/:id" 
+                element={
+                  <motion.div {...pageTransition}>
+                    <BlogPost />
+                  </motion.div>
+                } 
+              />
+              <Route 
+                path="/construction-cost" 
+                element={
+                  <motion.div {...pageTransition}>
+                    <ConstructionCost />
+                  </motion.div>
+                } 
+              />
+            
+
               <Route 
                 path="/projects" 
                 element={

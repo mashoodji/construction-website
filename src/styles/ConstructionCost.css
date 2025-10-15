@@ -1,0 +1,516 @@
+.construction-cost-page {
+  margin-top: 80px;
+  padding: 2rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  min-height: 100vh;
+}
+
+.calculator-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
+.calculator-header h1 {
+  color: var(--secondary);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.calculator-header p {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.calculator-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Form Styles */
+.form-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.form-card h2 {
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255, 180, 0, 0.1);
+}
+
+.input-with-unit {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.input-with-unit input {
+  flex: 1;
+}
+
+.input-with-unit select {
+  width: 120px;
+}
+
+.calculation-note {
+  background: #e3f2fd;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary);
+  margin-top: 1.5rem;
+}
+
+.calculation-note p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+/* Results Section */
+.calculator-results-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.total-cost-card {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.total-cost-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+.total-cost-amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.cost-details {
+  background: rgba(255,255,255,0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.cost-details p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Breakdown Section */
+.breakdown-section,
+.materials-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.breakdown-section h4,
+.materials-section h4 {
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.breakdown-item {
+  margin-bottom: 1rem;
+}
+
+.breakdown-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.breakdown-bar {
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.3rem;
+}
+
+.breakdown-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), #ff8c00);
+  border-radius: 4px;
+  animation: fillAnimation 1s ease-out;
+  transform-origin: left;
+}
+
+@keyframes fillAnimation {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.breakdown-percentage {
+  text-align: right;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+/* Materials Section */
+.materials-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.material-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.material-name {
+  font-weight: 600;
+  color: var(--secondary);
+  text-transform: capitalize;
+}
+
+.material-quantity {
+  text-align: center;
+  color: var(--text);
+}
+
+.material-cost {
+  text-align: right;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Info Section */
+.info-section {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.info-content h2 {
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.info-content p {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.info-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--primary);
+}
+
+.info-card h3 {
+  color: var(--secondary);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-card li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  color: var(--text);
+}
+
+.info-card li:last-child {
+  border-bottom: none;
+}
+
+.info-card strong {
+  color: var(--secondary);
+}
+
+/* FAQ Section */
+.faq-section {
+  margin: 3rem 0;
+}
+
+.faq-section h3 {
+  color: var(--secondary);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.faq-item {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--primary);
+}
+
+.faq-item h4 {
+  color: var(--secondary);
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.faq-item p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.faq-item strong {
+  color: var(--primary);
+}
+
+.conclusion {
+  background: #e3f2fd;
+  padding: 2rem;
+  border-radius: 10px;
+  border-left: 4px solid #2196f3;
+  margin-top: 2rem;
+}
+
+.conclusion h3 {
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.cta-content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.cta-buttons .btn-primary {
+  background: var(--primary);
+  color: var(--dark);
+}
+
+.cta-buttons .btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-buttons .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .calculator-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .form-card {
+    position: static;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .construction-cost-page {
+    margin-top: 70px;
+    padding: 1rem 0;
+  }
+  
+  .calculator-header h1 {
+    font-size: 2rem;
+  }
+  
+  .calculator-header p {
+    font-size: 1.1rem;
+  }
+  
+  .form-card {
+    padding: 1.5rem;
+  }
+  
+  .total-cost-amount {
+    font-size: 2rem;
+  }
+  
+  .material-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .material-quantity,
+  .material-cost {
+    text-align: center;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .calculator-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .info-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .breakdown-section,
+  .materials-section {
+    padding: 1rem;
+  }
+  
+  .total-cost-card {
+    padding: 1.5rem;
+  }
+  
+  .total-cost-amount {
+    font-size: 1.8rem;
+  }
+  
+  .input-with-unit {
+    flex-direction: column;
+  }
+  
+  .input-with-unit select {
+    width: 100%;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .construction-cost-page {
+    margin-top: 0;
+    background: white;
+  }
+  
+  .form-card,
+  .breakdown-section,
+  .materials-section,
+  .total-cost-card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+  
+  .cta-section {
+    display: none;
+  }
+}

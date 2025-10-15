@@ -55,6 +55,7 @@
   position: relative;
   display: block;
   transition: color 0.3s ease;
+  font-size: 0.95rem;
 }
 
 .nav-menu.desktop-menu a::after {
@@ -115,11 +116,13 @@
   border-radius: 8px;
   transition: all 0.3s ease;
   font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .dropdown-item:hover {
   color: var(--primary);
   background: rgba(255, 180, 0, 0.1);
+  transform: translateX(5px);
 }
 
 .submenu-icon {
@@ -145,6 +148,7 @@
   position: relative;
   border-radius: 12px;
   margin: 0.5rem 1.5rem;
+  font-size: 1rem;
 }
 
 .dropdown-arrow-mobile {
@@ -170,11 +174,13 @@
   border-radius: 6px;
   margin: 0.2rem;
   transition: all 0.3s ease;
+  font-size: 0.9rem;
 }
 
 .mobile-dropdown-item:hover {
   background: rgba(255, 180, 0, 0.15);
   color: var(--primary);
+  transform: translateX(8px);
 }
 
 .submenu-text {
@@ -297,6 +303,7 @@
   overflow: hidden;
   border: 1px solid transparent;
   transition: all 0.3s ease;
+  margin: 0.3rem 0;
 }
 
 .drawer-menu li:hover {
@@ -312,6 +319,7 @@
   font-weight: 500;
   transition: all 0.3s ease;
   position: relative;
+  font-size: 1rem;
 }
 
 .nav-icon {
@@ -332,6 +340,40 @@
   font-size: 1.1rem;
   font-weight: bold;
   transition: transform 0.3s ease;
+}
+
+/* Drawer Footer */
+.drawer-footer {
+  padding: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.drawer-footer p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.drawer-footer .btn {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  background: var(--primary);
+  color: var(--dark);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: block;
+}
+
+.drawer-footer .btn:hover {
+  background: #e6a200;
+  transform: translateY(-2px);
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
@@ -385,6 +427,10 @@
   .mobile-dropdown-menu {
     margin: 0 1rem;
   }
+  
+  .drawer-footer {
+    padding: 1.5rem;
+  }
 }
 
 /* Mobile Phones (480px and below) */
@@ -410,6 +456,19 @@
   .menu-toggle span {
     width: 20px;
   }
+  
+  .drawer-link {
+    padding: 0.8rem 1rem;
+  }
+  
+  .nav-icon {
+    font-size: 1.1rem;
+    margin-right: 0.8rem;
+  }
+  
+  .nav-text {
+    font-size: 0.95rem;
+  }
 }
 
 /* Desktop (769px and above) */
@@ -429,6 +488,17 @@
   .nav-brand h2 {
     font-size: 1.6rem;
   }
+  
+  .nav-menu.desktop-menu a {
+    font-size: 1rem;
+  }
+}
+
+/* Extra Large Screens (1400px and above) */
+@media (min-width: 1400px) {
+  .navbar .container {
+    max-width: 1300px;
+  }
 }
 
 /* Custom scrollbar for drawer */
@@ -445,7 +515,48 @@
   border-radius: 2px;
 }
 
+.drawer-menu::-webkit-scrollbar-thumb:hover {
+  background: #e6a200;
+}
+
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+}
+
+/* High-resolution displays */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .mobile-drawer {
+    width: 380px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .navbar {
+    background: var(--secondary);
+  }
+  
+  .navbar.scrolled {
+    background: rgba(15, 23, 42, 0.95);
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .navbar {
+    transition: none;
+  }
+  
+  .menu-toggle span {
+    transition: none;
+  }
+  
+  .drawer-link {
+    transition: none;
+  }
+  
+  .dropdown-item {
+    transition: none;
+  }
 }
