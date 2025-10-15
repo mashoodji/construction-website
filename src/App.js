@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
+import ArchitecturalDesign from './pages/ArchitecturalDesign';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import CEOMessagePage from './pages/CEOMessagePage';
@@ -48,6 +49,14 @@ function App() {
                 element={
                   <motion.div {...pageTransition}>
                     <Services />
+                  </motion.div>
+                } 
+              />
+              <Route 
+                path="/architectural-design" 
+                element={
+                  <motion.div {...pageTransition}>
+                    <ArchitecturalDesign />
                   </motion.div>
                 } 
               />

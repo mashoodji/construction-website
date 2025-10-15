@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import '../styles/Services.css';
+import '../styles/ArchitecturalDesign.css';
 
-const Services = () => {
+const ArchitecturalDesign = () => {
   const [selectedService, setSelectedService] = useState(null);
   const navigate = useNavigate();
 
@@ -11,82 +11,82 @@ const Services = () => {
     {
       id: 1,
       icon: "🏠",
-      title: "Residential Construction",
-      description: "Custom home building and residential projects tailored to your lifestyle.",
-      details: "From dream homes to luxury villas and high-rise residential complexes, we bring your vision to life with precision and quality craftsmanship.",
-      features: ["Custom Home Building", "Home Renovations", "Kitchen & Bath Remodels", "Room Additions", "High Rise Residential", "Luxury Villas"]
+      title: "Residential Design",
+      description: "Custom home designs and residential architectural solutions.",
+      details: "From dream homes to luxury villas and residential complexes, we create innovative designs that blend functionality with aesthetic appeal.",
+      features: ["Custom Home Design", "Villa Architecture", "Apartment Complexes", "Residential Master Planning", "Sustainable Housing", "Interior-Exterior Integration"]
     },
     {
       id: 2,
       icon: "🏢",
-      title: "Commercial Construction",
-      description: "Office buildings and commercial spaces designed for business success.",
-      details: "We create commercial spaces that enhance productivity and reflect your brand identity, from corporate offices to retail establishments.",
-      features: ["Office Buildings", "Retail Spaces", "Restaurants", "Commercial Renovations", "Shopping Centers", "Corporate Campuses"]
+      title: "Commercial Design",
+      description: "Innovative commercial spaces designed for business excellence.",
+      details: "We design commercial buildings that enhance productivity, reflect brand identity, and create inspiring work environments.",
+      features: ["Office Building Design", "Retail Space Planning", "Shopping Mall Architecture", "Commercial Complexes", "Corporate Campuses", "Mixed-Use Developments"]
     },
     {
       id: 3,
-      icon: "🏭",
-      title: "Industrial Construction",
-      description: "Robust industrial facilities and manufacturing plants.",
-      details: "We build durable and efficient industrial facilities designed to meet the demanding requirements of manufacturing and production.",
-      features: ["Manufacturing Plants", "Warehouses", "Industrial Facilities", "Processing Plants", "Distribution Centers", "Industrial Parks"]
+      icon: "🎨",
+      title: "Concept Design",
+      description: "Creative conceptualization and initial design development.",
+      details: "Transforming ideas into visual concepts through sketches, mood boards, and preliminary designs that capture your vision.",
+      features: ["Design Conceptualization", "Mood Boards", "Preliminary Sketches", "Design Development", "Creative Direction", "Vision Establishment"]
     },
     {
       id: 4,
-      icon: "⛪",
-      title: "Religious Buildings",
-      description: "Sacred spaces that inspire and bring communities together.",
-      details: "Creating meaningful religious spaces that serve as centers for worship, community gatherings, and spiritual reflection.",
-      features: ["Churches", "Temples", "Mosques", "Community Halls", "Religious Centers", "Prayer Halls"]
+      icon: "📐",
+      title: "3D Modeling & Visualization",
+      description: "Realistic 3D representations of architectural projects.",
+      details: "Bringing designs to life with detailed 3D models, renderings, and virtual walkthroughs for better decision making.",
+      features: ["3D Architectural Modeling", "Photorealistic Rendering", "Virtual Reality Walkthroughs", "Animation Videos", "Material Visualization", "Lighting Studies"]
     },
     {
       id: 5,
-      icon: "🛣️",
-      title: "Roads & Infrastructure",
-      description: "Modern transportation networks and public infrastructure.",
-      details: "Building and maintaining critical transportation infrastructure that connects communities and supports economic growth.",
-      features: ["Highways", "Bridges", "Local Roads", "Infrastructure Development", "Transportation Networks", "Public Works"]
+      icon: "📋",
+      title: "Architectural Planning",
+      description: "Comprehensive space planning and functional layouts.",
+      details: "Creating efficient and practical floor plans that optimize space utilization while maintaining aesthetic integrity.",
+      features: ["Space Planning", "Floor Plan Design", "Circulation Analysis", "Functional Layouts", "Zoning Compliance", "Accessibility Planning"]
     },
     {
       id: 6,
-      icon: "🎓",
-      title: "Educational Facilities",
-      description: "Learning environments that foster education and growth.",
-      details: "Constructing modern educational facilities that provide optimal learning environments for students of all ages.",
-      features: ["Schools", "Universities", "Libraries", "Research Centers", "Educational Campuses", "Training Facilities"]
+      icon: "🏛️",
+      title: "Institutional Design",
+      description: "Architectural solutions for educational and public institutions.",
+      details: "Designing inspiring educational and institutional spaces that foster learning, collaboration, and community engagement.",
+      features: ["School & University Design", "Library Architecture", "Government Buildings", "Community Centers", "Cultural Institutions", "Public Facilities"]
     },
     {
       id: 7,
       icon: "🏥",
-      title: "Healthcare Facilities",
-      description: "Medical centers and healthcare institutions for community wellness.",
-      details: "Building state-of-the-art healthcare facilities that meet the highest standards of medical care and patient comfort.",
-      features: ["Hospitals", "Clinics", "Medical Centers", "Healthcare Facilities", "Rehabilitation Centers", "Specialty Care Units"]
+      title: "Healthcare Design",
+      description: "Healing environments designed for patient care and wellness.",
+      details: "Creating healthcare facilities that prioritize patient comfort, staff efficiency, and medical functionality.",
+      features: ["Hospital Design", "Clinic Planning", "Medical Office Buildings", "Healthcare Facilities", "Patient Room Design", "Medical Space Planning"]
     },
     {
       id: 8,
-      icon: "⚽",
-      title: "Sports & Recreational",
-      description: "Athletic facilities and recreational spaces for active lifestyles.",
-      details: "Creating sports complexes and recreational facilities that promote health, wellness, and community engagement.",
-      features: ["Stadiums", "Sports Complexes", "Recreation Centers", "Fitness Facilities", "Athletic Fields", "Swimming Pools"]
+      icon: "🌿",
+      title: "Sustainable Design",
+      description: "Eco-friendly and energy-efficient architectural solutions.",
+      details: "Incorporating sustainable practices, green building principles, and energy-efficient systems into architectural designs.",
+      features: ["Green Building Design", "LEED Certification", "Energy Efficiency", "Sustainable Materials", "Passive Design", "Environmental Integration"]
     },
     {
       id: 9,
-      icon: "🔨",
-      title: "Renovation & Remodeling",
-      description: "Transform your existing spaces into something extraordinary.",
-      details: "Breathe new life into your property with our expert renovation and remodeling services across all building types.",
-      features: ["Complete Renovations", "Kitchen Remodels", "Bathroom Updates", "Space Optimization", "Facade Renovations", "Interior Upgrades"]
+      icon: "🔄",
+      title: "Renovation Design",
+      description: "Transforming existing spaces with innovative redesigns.",
+      details: "Breathing new life into existing structures through creative renovation designs that enhance functionality and aesthetics.",
+      features: ["Building Renovation", "Space Reconfiguration", "Facade Redesign", "Interior Remodeling", "Adaptive Reuse", "Heritage Restoration"]
     },
     {
       id: 10,
       icon: "📊",
-      title: "Project Management",
-      description: "End-to-end project oversight from concept to completion.",
-      details: "Our comprehensive project management ensures your project stays on time and within budget, regardless of scale or complexity.",
-      features: ["Budget Management", "Timeline Coordination", "Quality Control", "Stakeholder Communication", "Risk Management", "Contract Administration"]
+      title: "Design Consultation",
+      description: "Expert architectural advice and design guidance.",
+      details: "Providing professional consultation services to guide your project from initial concept through to design development.",
+      features: ["Design Strategy", "Architectural Advice", "Project Feasibility", "Design Review", "Code Compliance", "Technical Guidance"]
     }
   ];
 
@@ -155,19 +155,19 @@ const Services = () => {
 
   return (
     <motion.div 
-      className="services-page"
+      className="architectural-design-page"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
       <div className="container">
-        <motion.h1 variants={itemVariants}>Our Services</motion.h1>
+        <motion.h1 variants={itemVariants}>Architectural Design Services</motion.h1>
         
         <motion.p 
           className="services-intro"
           variants={itemVariants}
         >
-          Comprehensive construction solutions for residential, commercial, industrial, and institutional projects.
+          Innovative architectural solutions that blend creativity, functionality, and sustainability for exceptional built environments.
         </motion.p>
         
         <motion.div 
@@ -281,4 +281,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default ArchitecturalDesign;

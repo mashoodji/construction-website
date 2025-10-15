@@ -28,11 +28,9 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { name: 'Facebook', icon: '📘', url: '#' },
-    { name: 'Twitter', icon: '🐦', url: '#' },
-    { name: 'Instagram', icon: '📷', url: '#' },
-    { name: 'LinkedIn', icon: '💼', url: '#' },
-    { name: 'YouTube', icon: '📺', url: '#' }
+    { name: 'Facebook', icon: '📘', url: 'https://facebook.com/meezandevelopers' },
+    { name: 'Instagram', icon: '📷', url: 'https://instagram.com/meezandevelopers' },
+    { name: 'WhatsApp', icon: '💬', url: 'https://wa.me/+923218836371' }
   ];
 
   const quickLinks = [
@@ -41,6 +39,15 @@ const Footer = () => {
     { name: 'Services', path: '/services' },
     { name: 'Projects', path: '/projects' },
     { name: 'Contact', path: '/contact' }
+  ];
+
+  const services = [
+    'Residential Construction',
+    'Commercial Construction',
+    'Industrial Construction',
+    'Religious Buildings',
+    'Roads & Infrastructure',
+    'Renovation & Remodeling'
   ];
 
   return (
@@ -60,13 +67,14 @@ const Footer = () => {
           >
             <motion.h3 
               className="footer-logo"
-              whileHover={{ color: "var(--primary)" }}
+              whileHover={{ scale: 1.05 }}
             >
-              BuildPro Construction
+              🏗️ Meezan Developers
             </motion.h3>
-            <p>
-              Building dreams with precision and quality for over 20 years. 
-              Your trusted partner in construction excellence.
+            <p className="company-description">
+              Building excellence with precision and quality for over a decade. 
+              Your trusted construction partner in Lahore, delivering exceptional 
+              residential, commercial, and infrastructure projects.
             </p>
             <div className="contact-info">
               <motion.div 
@@ -74,79 +82,140 @@ const Footer = () => {
                 whileHover={{ x: 5 }}
               >
                 <span className="contact-icon">📞</span>
-                <span>+1 (555) 123-4567</span>
+                <div className="contact-details">
+                  <span className="contact-label">Call Us</span>
+                  <span className="contact-value">+92 (321) 883-6371</span>
+                </div>
+              </motion.div>
+              <motion.div 
+                className="contact-item"
+                whileHover={{ x: 5 }}
+              >
+                <span className="contact-icon">💬</span>
+                <div className="contact-details">
+                  <span className="contact-label">WhatsApp</span>
+                  <span className="contact-value">+92 (311) 178-6646</span>
+                </div>
               </motion.div>
               <motion.div 
                 className="contact-item"
                 whileHover={{ x: 5 }}
               >
                 <span className="contact-icon">✉️</span>
-                <span>info@buildpro.com</span>
+                <div className="contact-details">
+                  <span className="contact-label">Email</span>
+                  <span className="contact-value">meezandevelopers.official@gmail.com</span>
+                </div>
               </motion.div>
               <motion.div 
                 className="contact-item"
                 whileHover={{ x: 5 }}
               >
                 <span className="contact-icon">📍</span>
-                <span>123 Construction St, City, State 12345</span>
+                <div className="contact-details">
+                  <span className="contact-label">Address</span>
+                  <span className="contact-value">Plaza # 97-B Main Boulevard Jubilee Town, Canal Road Lahore</span>
+                </div>
               </motion.div>
             </div>
           </motion.div>
 
-          {/* Quick Links */}
-          <motion.div 
-            className="footer-section quick-links"
-            variants={itemVariants}
-          >
-            <h4>Quick Links</h4>
-            <ul>
-              {quickLinks.map((link) => (
-                <motion.li key={link.name}>
-                  <motion.a 
-                    href={link.path}
-                    whileHover={{ 
-                      x: 5,
-                      color: "var(--primary)"
-                    }}
-                  >
-                    {link.name}
-                  </motion.a>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
+          {/* Quick Links & Services */}
+          <div className="footer-links-container">
+            <motion.div 
+              className="footer-section quick-links"
+              variants={itemVariants}
+            >
+              <h4>Quick Links</h4>
+              <ul>
+                {quickLinks.map((link) => (
+                  <motion.li key={link.name}>
+                    <motion.a 
+                      href={link.path}
+                      whileHover={{ 
+                        x: 5,
+                        color: "#f59e0b"
+                      }}
+                    >
+                      {link.name}
+                    </motion.a>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+            <motion.div 
+              className="footer-section services-links"
+              variants={itemVariants}
+            >
+              <h4>Our Services</h4>
+              <ul>
+                {services.map((service) => (
+                  <motion.li key={service}>
+                    <motion.a 
+                      href="/services"
+                      whileHover={{ 
+                        x: 5,
+                        color: "#f59e0b"
+                      }}
+                    >
+                      {service}
+                    </motion.a>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
 
           {/* Newsletter & Social */}
           <motion.div 
             className="footer-section newsletter"
             variants={itemVariants}
           >
-            <h4>Stay Updated</h4>
-            <p>Subscribe to our newsletter for the latest updates and projects.</p>
+            <h4>Get Free Consultation</h4>
+            <p className="consultation-text">Contact us for project estimates and construction consultations.</p>
             
-            <motion.form 
-              className="newsletter-form"
-              whileHover={{ scale: 1.02 }}
-            >
-              <motion.input 
-                type="email" 
-                placeholder="Enter your email"
-                whileFocus={{ 
-                  scale: 1.05,
-                  boxShadow: "0 0 0 2px var(--primary)"
-                }}
-              />
-              <motion.button 
-                type="submit"
+            <motion.div className="cta-buttons">
+              <motion.a 
+                href="tel:+923218836371"
+                className="cta-btn call"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Subscribe
-              </motion.button>
-            </motion.form>
+                <span className="btn-icon">📞</span>
+                <span className="btn-text">Call Now</span>
+              </motion.a>
+              <motion.a 
+                href="https://wa.me/+923218836371"
+                className="cta-btn whatsapp"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="btn-icon">💬</span>
+                <span className="btn-text">WhatsApp</span>
+              </motion.a>
+            </motion.div>
+
+            <div className="business-hours">
+              <h5>Business Hours</h5>
+              <div className="hours-list">
+                <div className="hour-item">
+                  <span className="day">Mon - Fri:</span>
+                  <span className="time">8:00 AM - 6:00 PM</span>
+                </div>
+                <div className="hour-item">
+                  <span className="day">Saturday:</span>
+                  <span className="time">9:00 AM - 2:00 PM</span>
+                </div>
+                <div className="hour-item">
+                  <span className="day">Sunday:</span>
+                  <span className="time closed">Closed</span>
+                </div>
+              </div>
+            </div>
 
             <div className="social-links">
-              <h5>Follow Us</h5>
+              <h5>Follow Our Work</h5>
               <div className="social-icons">
                 {socialLinks.map((social) => (
                   <motion.a
@@ -177,23 +246,23 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <div className="footer-bottom-content">
-            <p>&copy; {currentYear} BuildPro Construction. All rights reserved.</p>
+            <p className="copyright">&copy; {currentYear} Meezan Developers. All rights reserved.</p>
             <div className="footer-bottom-links">
               <motion.a 
                 href="/privacy"
-                whileHover={{ color: "var(--primary)" }}
+                whileHover={{ color: "#f59e0b" }}
               >
                 Privacy Policy
               </motion.a>
               <motion.a 
                 href="/terms"
-                whileHover={{ color: "var(--primary)" }}
+                whileHover={{ color: "#f59e0b" }}
               >
                 Terms of Service
               </motion.a>
               <motion.a 
                 href="/sitemap"
-                whileHover={{ color: "var(--primary)" }}
+                whileHover={{ color: "#f59e0b" }}
               >
                 Sitemap
               </motion.a>
@@ -201,6 +270,9 @@ const Footer = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Construction Pattern Overlay */}
+      <div className="construction-pattern"></div>
     </motion.footer>
   );
 };
