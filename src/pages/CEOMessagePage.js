@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import '../styles/CEOMessage.css';
 
 // Import the CEO photo with your provided path
-import ceoPhoto from '../assets/images/ceo_image/image1.webp';
+import ceoPhoto from '../assets/images/ceo_image/ceoimage.jpg';
 
 const CEOMessagePage = () => {
   const containerVariants = {

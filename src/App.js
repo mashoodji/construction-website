@@ -10,9 +10,16 @@ import ArchitecturalDesign from './pages/ArchitecturalDesign';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
+import Residential from './pages/Residential';
 import BlogPost from './pages/BlogPost'; 
 import ConstructionCost from './pages/ConstructionCost';
 import CEOMessagePage from './pages/CEOMessagePage';
+import Commercial from './pages/Commercial';
+import Educational from './pages/Educational';
+import Religious from './pages/Religious';
+import Industrial from './pages/Industrial';
+import Infrastructure from './pages/Infrastructure';
+import Road from './pages/Road';
 import './styles/global.css';
 
 // Simplified page transition
@@ -87,13 +94,67 @@ function App() {
                   </motion.div>
                 } 
               />
-            
-
               <Route 
                 path="/projects" 
                 element={
                   <motion.div {...pageTransition}>
                     <Projects />
+                  </motion.div>
+                } 
+              />
+              <Route 
+                path="/residential" 
+                element={
+                  <motion.div {...pageTransition}>
+                    <Residential/>
+                  </motion.div>
+                } 
+              />
+              <Route 
+                path="/commercial" 
+                element={
+                  <motion.div {...pageTransition}>
+                    <Commercial/>
+                  </motion.div>
+                } 
+              />
+              <Route 
+                path="/infrastructure" 
+                element={
+                  <motion.div {...pageTransition}>
+                    <Infrastructure/>
+                  </motion.div>
+                } 
+              />
+              <Route 
+                path="/industrial" 
+                element={
+                  <motion.div {...pageTransition}>
+                    <Industrial/>
+                  </motion.div>
+                } 
+              />
+              <Route 
+                path="/educational" 
+                element={
+                  <motion.div {...pageTransition}>
+                    <Educational/>
+                  </motion.div>
+                } 
+              />
+              <Route 
+                path="/religious" 
+                element={
+                  <motion.div {...pageTransition}>
+                    <Religious/>
+                  </motion.div>
+                } 
+              />
+              <Route 
+                path="/road" 
+                element={
+                  <motion.div {...pageTransition}>
+                    <Road/>
                   </motion.div>
                 } 
               />

@@ -1,25 +1,19 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Projects.css';
 
-// Import your actual project images
-import project1 from '../assets/images/projects/villa.avif';
-import project2 from '../assets/images/projects/office-complex.webp';
-import project3 from '../assets/images/projects/shopping-center.avif';
-import project4 from '../assets/images/projects/industrial-facility.avif';
-import project5 from '../assets/images/projects/villa.avif';
-import project6 from '../assets/images/projects/industrial-facility.avif';
-import project7 from '../assets/images/projects/office-complex.webp';
-import project8 from '../assets/images/projects/shopping-center.avif';
-import project9 from '../assets/images/projects/industrial-facility.avif';
-import project10 from '../assets/images/projects/villa.avif';
-import project11 from '../assets/images/projects/office-complex.webp';
-import project12 from '../assets/images/projects/shopping-center.avif';
+// Import category images - you can replace these with actual category images
+import residentialImg from '../assets/images/projects/temporay/residential.jpeg';
+import commercialImg from '../assets/images/projects/temporay/commercial1.jpeg';
+import industrialImg from '../assets/images/projects/temporay/industrial.jpeg';
+import religiousImg from '../assets/images/projects/temporay/religious.jpeg';
+import infrastructureImg from '../assets/images/projects/temporay/infrastructure.png';
+import educationalImg from '../assets/images/projects/temporay/educational.jpeg';
+import roadsImg from '../assets/images/projects/temporay/roads.jpg';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
-  const [selectedProject, setSelectedProject] = useState(null);
   const [imageLoading, setImageLoading] = useState({});
   const navigate = useNavigate();
 
@@ -31,172 +25,100 @@ const Projects = () => {
     { id: 'religious', name: 'Religious' },
     { id: 'infrastructure', name: 'Infrastructure' },
     { id: 'educational', name: 'Educational' },
-    { id: 'healthcare', name: 'Healthcare' },
-    { id: 'sports', name: 'Sports & Recreational' }
+    { id: 'road', name: 'Road' }
   ];
 
-  const projects = [
+  const categoryProjects = [
     {
-      id: 1,
-      title: "Modern Luxury Villa - DHA Lahore",
+      id: 'residential',
+      title: "Residential Projects",
       category: "residential",
       status: "completed",
-      year: "2023",
-      description: "Contemporary luxury villa with premium finishes and modern amenities in Defence Housing Authority.",
-      image: project1,
-      features: ["Smart Home Automation", "Marble Flooring", "Swimming Pool", "Landscaped Gardens", "Modular Kitchen"],
-      location: "DHA Phase 6, Lahore",
-      duration: "14 Months",
-      budget: "PKR 4.2 Crore"
+      year: "",
+      description: "Luxury villas, apartment complexes, and modern housing projects designed for comfort and elegance.",
+      image: residentialImg,
+      features: ["Modern Villas", "Apartment Complexes", "Smart Homes", "Luxury Finishes"],
+      projectCount: "12+ Projects",
+      duration: "Various"
     },
     {
-      id: 2,
-      title: "Corporate Office Tower - Gulberg",
-      category: "commercial",
-      status: "in-progress",
-      year: "2024",
-      description: "8-story commercial office building with modern facilities in prime business district.",
-      image: project2,
-      features: ["Central AC System", "Elevators", "Basement Parking", "Conference Rooms", "Cafeteria"],
-      location: "Main Boulevard Gulberg, Lahore",
-      duration: "20 Months",
-      budget: "PKR 12.5 Crore"
-    },
-    {
-      id: 3,
-      title: "Emporium Shopping Mall",
+      id: 'commercial',
+      title: "Commercial Projects",
       category: "commercial",
       status: "completed",
-      year: "2024",
-      description: "Modern shopping complex with 40+ stores, food court, and entertainment facilities.",
-      image: project3,
-      features: ["40+ Retail Outlets", "Food Court", "Cinema", "Ample Parking", "Security Systems"],
-      location: "Johar Town, Lahore",
-      duration: "18 Months",
-      budget: "PKR 9.8 Crore"
+      year: "",
+      description: "Office towers, shopping malls, and commercial plazas built for business excellence.",
+      image: commercialImg,
+      features: ["Office Towers", "Shopping Malls", "Commercial Plazas", "Business Centers"],
+      projectCount: "8+ Projects",
+      duration: "Various"
     },
     {
-      id: 4,
-      title: "Industrial Warehouse - Sundar Industrial Estate",
+      id: 'industrial',
+      title: "Industrial Projects",
       category: "industrial",
       status: "completed",
-      year: "2023",
-      description: "40,000 sq ft industrial storage facility with advanced logistics systems.",
-      image: project4,
-      features: ["Steel Structure", "Loading Bays", "Office Space", "Security Systems", "Fire Safety"],
-      location: "Sundar Industrial Estate, Lahore",
-      duration: "12 Months",
-      budget: "PKR 3.5 Crore"
+      year: "",
+      description: "Warehouses, factories, and industrial facilities with advanced infrastructure.",
+      image: industrialImg,
+      features: ["Warehouses", "Manufacturing Units", "Storage Facilities", "Industrial Complexes"],
+      projectCount: "6+ Projects",
+      duration: "Various"
     },
     {
-      id: 5,
-      title: "Apartment Complex - Bahria Town",
-      category: "residential",
-      status: "in-progress",
-      year: "2024",
-      description: "60-unit luxury apartment building with modern amenities and community facilities.",
-      image: project5,
-      features: ["Swimming Pool", "Gym", "Children Play Area", "24/7 Security", "Parking Spaces"],
-      location: "Bahria Town, Lahore",
-      duration: "24 Months",
-      budget: "PKR 15.2 Crore"
-    },
-    {
-      id: 6,
-      title: "Five-Star Hotel Project",
-      category: "commercial",
-      status: "planned",
-      year: "2025",
-      description: "Luxury hotel with premium amenities, restaurants, and banquet facilities.",
-      image: project6,
-      features: ["200 Rooms", "Swimming Pool", "Banquet Hall", "Restaurants", "Spa"],
-      location: "MM Alam Road, Lahore",
-      duration: "30 Months",
-      budget: "PKR 45 Crore"
-    },
-    {
-      id: 7,
-      title: "Community Mosque - Model Town",
+      id: 'religious',
+      title: "Religious Projects",
       category: "religious",
       status: "completed",
-      year: "2023",
-      description: "Beautiful mosque with traditional Islamic architecture and modern facilities.",
-      image: project7,
-      features: ["Main Prayer Hall", "Ablution Area", "Library", "Air Conditioning", "Parking"],
-      location: "Model Town, Lahore",
-      duration: "10 Months",
-      budget: "PKR 2.1 Crore"
+      year: "",
+      description: "Beautiful mosques and religious centers with traditional and modern architecture.",
+      image: religiousImg,
+      features: ["Community Mosques", "Islamic Centers", "Prayer Halls", "Religious Complexes"],
+      projectCount: "4+ Projects",
+      duration: "Various"
     },
     {
-      id: 8,
-      title: "Ring Road Infrastructure Project",
+      id: 'infrastructure',
+      title: "Infrastructure Projects",
       category: "infrastructure",
-      status: "in-progress",
-      year: "2024",
-      description: "Major road infrastructure development with bridges and interchanges.",
-      image: project8,
-      features: ["4-Lane Highway", "Bridges", "Drainage System", "Street Lighting", "Landscaping"],
-      location: "Lahore Ring Road",
-      duration: "28 Months",
-      budget: "PKR 85 Crore"
+      status: "completed",
+      year: "",
+      description: "Roads, bridges, and public infrastructure developments across Pakistan.",
+      image: infrastructureImg,
+      features: ["Road Networks", "Bridges", "Public Works", "Development Projects"],
+      projectCount: "5+ Projects",
+      duration: "Various"
     },
     {
-      id: 9,
-      title: "University Academic Block",
+      id: 'educational',
+      title: "Educational Projects",
       category: "educational",
       status: "completed",
-      year: "2023",
-      description: "Modern educational facility with classrooms, labs, and administrative offices.",
-      image: project9,
-      features: ["Classrooms", "Computer Labs", "Library", "Faculty Offices", "Common Areas"],
-      location: "University of Lahore",
-      duration: "16 Months",
-      budget: "PKR 7.8 Crore"
+      year: "",
+      description: "Schools, colleges, and university buildings for the future of education.",
+      image: educationalImg,
+      features: ["University Blocks", "Schools", "Libraries", "Educational Complexes"],
+      projectCount: "7+ Projects",
+      duration: "Various"
     },
-    {
-      id: 10,
-      title: "Medical Hospital Extension",
-      category: "healthcare",
-      status: "planned",
-      year: "2025",
-      description: "Healthcare facility expansion with specialized departments and modern equipment.",
-      image: project10,
-      features: ["Emergency Ward", "Operation Theaters", "ICU", "Patient Rooms", "Diagnostic Center"],
-      location: "Shalimar Hospital, Lahore",
-      duration: "22 Months",
-      budget: "PKR 18.5 Crore"
-    },
-    {
-      id: 11,
-      title: "Sports Complex - WAPDA Town",
-      category: "sports",
-      status: "completed",
-      year: "2023",
-      description: "Multi-purpose sports facility for community use and professional training.",
-      image: project11,
-      features: ["Cricket Ground", "Tennis Courts", "Swimming Pool", "Gymnasium", "Changing Rooms"],
-      location: "WAPDA Town, Lahore",
-      duration: "14 Months",
-      budget: "PKR 6.3 Crore"
-    },
-    {
-      id: 12,
-      title: "Mixed-Use Commercial Plaza",
-      category: "commercial",
-      status: "in-progress",
-      year: "2024",
-      description: "Integrated commercial development with retail, office, and food court spaces.",
-      image: project12,
-      features: ["Retail Shops", "Office Spaces", "Food Court", "Parking Plaza", "Security"],
-      location: "Ferozepur Road, Lahore",
-      duration: "20 Months",
-      budget: "PKR 22 Crore"
-    }
+   {
+    id: 'roads',
+    title: "Roads Construction Projects",
+    category: "roads",
+    status: "completed",
+    year: "",
+    description: "High-quality road networks, highways, and transportation infrastructure built with precision and durability for smooth connectivity.",
+    image: roadsImg, 
+    features: ["Highways", "Expressways", "Urban Roads", "Rural Roads", "Bridges", "Flyovers"],
+    projectCount: "15+ Projects",
+    duration: "Various"
+  }
+
   ];
 
   const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
+    ? categoryProjects 
+    : categoryProjects.filter(project => project.category === activeFilter);
 
   const handleImageLoad = (projectId) => {
     setImageLoading(prev => ({ ...prev, [projectId]: false }));
@@ -204,19 +126,30 @@ const Projects = () => {
 
   const handleImageError = (projectId) => {
     setImageLoading(prev => ({ ...prev, [projectId]: false }));
-    // You could set a fallback image here
   };
 
-  const handleInquireProject = (project) => {
-    setSelectedProject(null);
-    setTimeout(() => {
-      navigate('/contact', { 
-        state: { 
-          selectedService: project.title,
-          projectDetails: project
-        }
-      });
-    }, 300);
+  const handleCategoryClick = (categoryId) => {
+    // Navigate to category-specific project page
+      navigate(`/${categoryId}`);
+  };
+
+  const handleFilterClick = (filterId) => {
+    setActiveFilter(filterId);
+    
+    // If it's not "all", navigate to the category page
+    if (filterId !== 'all') {
+      navigate(`/${filterId}`);
+    }
+  };
+
+  const handleInquireProject = (project, e) => {
+    e.stopPropagation(); // Prevent navigation to project page
+    navigate('/contact', { 
+      state: { 
+        selectedService: project.title,
+        projectDetails: project
+      }
+    });
   };
 
   const containerVariants = {
@@ -254,31 +187,6 @@ const Projects = () => {
     }
   };
 
-  const projectModalVariants = {
-    hidden: { 
-      opacity: 0,
-      scale: 0.8,
-      rotateX: 10
-    },
-    visible: { 
-      opacity: 1,
-      scale: 1,
-      rotateX: 0,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 25
-      }
-    },
-    exit: {
-      opacity: 0,
-      scale: 0.8,
-      transition: {
-        duration: 0.3
-      }
-    }
-  };
-
   const getStatusColor = (status) => {
     switch(status) {
       case 'completed': return '#10b981';
@@ -311,7 +219,8 @@ const Projects = () => {
           className="projects-intro"
           variants={itemVariants}
         >
-          Explore our diverse portfolio of successful construction projects across Pakistan, showcasing our commitment to quality and excellence in building the nation's infrastructure.
+          Explore our diverse portfolio of successful construction projects across various categories, 
+          showcasing our commitment to quality and excellence in building Pakistan's infrastructure.
         </motion.p>
         
         {/* Filter Buttons */}
@@ -323,7 +232,7 @@ const Projects = () => {
             <motion.button
               key={filter.id}
               className={`filter-btn ${activeFilter === filter.id ? 'active' : ''}`}
-              onClick={() => setActiveFilter(filter.id)}
+              onClick={() => handleFilterClick(filter.id)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400 }}
@@ -340,240 +249,109 @@ const Projects = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          Showing {filteredProjects.length} of {projects.length} projects across Pakistan
+          {activeFilter === 'all' ? (
+            <>Showing all {categoryProjects.length} project categories with completed and ongoing developments</>
+          ) : (
+            <>Showing projects in <strong>{filters.find(f => f.id === activeFilter)?.name}</strong> category</>
+          )}
         </motion.div>
         
-        {/* Projects Grid */}
+        {/* Category Projects Grid */}
         <motion.div 
           className="projects-grid"
           layout
         >
-          <AnimatePresence>
-            {filteredProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                className="project-item"
-                variants={itemVariants}
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                layout
-                whileHover={{ 
-                  scale: 1.05,
-                  y: -10,
-                  transition: { type: "spring", stiffness: 400 }
-                }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setSelectedProject(project)}
+          {filteredProjects.map((project) => (
+            <motion.div
+              key={project.id}
+              className="project-item"
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              layout
+              whileHover={{ 
+                scale: 1.05,
+                y: -10,
+                transition: { type: "spring", stiffness: 400 }
+              }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => handleCategoryClick(project.id)}
+            >
+              <motion.div 
+                className="project-image"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3 }}
               >
-                <motion.div 
-                  className="project-image"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {imageLoading[project.id] !== false && (
-                    <div className="image-skeleton">
-                      <div className="skeleton-loader"></div>
-                    </div>
-                  )}
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    onLoad={() => handleImageLoad(project.id)}
-                    onError={() => handleImageError(project.id)}
-                    style={{ 
-                      opacity: imageLoading[project.id] === false ? 1 : 0 
-                    }}
-                  />
-                </motion.div>
-                
-                <motion.div 
-                  className="project-badge"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.2, type: "spring" }}
-                  style={{ backgroundColor: getStatusColor(project.status) }}
-                >
-                  {getStatusIcon(project.status)} {project.status.replace('-', ' ').toUpperCase()}
-                </motion.div>
-                
-                <div className="project-content">
-                  <h3>{project.title}</h3>
-                  <p className="project-category">{project.category} • {project.year}</p>
-                  <p className="project-description">{project.description}</p>
-                  
-                  <div className="project-meta">
-                    <span className="location">📍 {project.location}</span>
-                    <span className="duration">⏱️ {project.duration}</span>
+                {imageLoading[project.id] !== false && (
+                  <div className="image-skeleton">
+                    <div className="skeleton-loader"></div>
                   </div>
-                </div>
+                )}
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  onLoad={() => handleImageLoad(project.id)}
+                  onError={() => handleImageError(project.id)}
+                  style={{ 
+                    opacity: imageLoading[project.id] === false ? 1 : 0 
+                  }}
+                />
+              </motion.div>
+              
+              <motion.div 
+                className="project-badge"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2, type: "spring" }}
+                style={{ backgroundColor: getStatusColor(project.status) }}
+              >
+                {getStatusIcon(project.status)} {project.status.replace('-', ' ').toUpperCase()}
+              </motion.div>
+              
+              <div className="project-content">
+                <h3>{project.title}</h3>
+                <p className="project-category">{project.category} • {project.year}</p>
+                <p className="project-description">{project.description}</p>
                 
+                <div className="project-meta">
+                  <span className="project-count">📊 {project.projectCount}</span>
+                  <span className="duration">⏱️ {project.duration}</span>
+                </div>
+
+                <div className="features-preview">
+                  {project.features.slice(0, 3).map((feature, index) => (
+                    <span key={index} className="feature-tag">
+                      {feature}
+                    </span>
+                  ))}
+                  {project.features.length > 3 && (
+                    <span className="feature-tag more">
+                      +{project.features.length - 3} more
+                    </span>
+                  )}
+                </div>
+              </div>
+              
+              <div className="project-actions">
                 <motion.span 
                   className="view-details"
                   whileHover={{ x: 5 }}
                 >
-                  View Details →
+                  View Projects →
                 </motion.span>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
-
-        {/* Project Detail Modal */}
-        <AnimatePresence>
-          {selectedProject && (
-            <motion.div 
-              className="project-modal-overlay"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSelectedProject(null)}
-            >
-              <motion.div 
-                className="project-modal"
-                variants={projectModalVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                onClick={(e) => e.stopPropagation()}
-              >
                 <motion.button 
-                  className="close-button"
-                  onClick={() => setSelectedProject(null)}
-                  whileHover={{ scale: 1.1, rotate: 90 }}
-                  whileTap={{ scale: 0.9 }}
+                  className="inquire-btn"
+                  onClick={(e) => handleInquireProject(project, e)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  ×
+                  Inquire
                 </motion.button>
-                
-                <motion.div 
-                  className="project-image large"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.2, type: "spring" }}
-                >
-                  <img 
-                    src={selectedProject.image} 
-                    alt={selectedProject.title}
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                    }}
-                  />
-                </motion.div>
-                
-                <motion.div 
-                  className="project-status-badge"
-                  style={{ backgroundColor: getStatusColor(selectedProject.status) }}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.3 }}
-                >
-                  {getStatusIcon(selectedProject.status)} {selectedProject.status.replace('-', ' ').toUpperCase()}
-                </motion.div>
-                
-                <motion.h2
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                >
-                  {selectedProject.title}
-                </motion.h2>
-                
-                <motion.p 
-                  className="project-description"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  {selectedProject.description}
-                </motion.p>
-                
-                <motion.div 
-                  className="project-features"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  <h4>Key Features:</h4>
-                  <div className="features-grid">
-                    {selectedProject.features.map((feature, index) => (
-                      <motion.span 
-                        key={feature}
-                        className="feature-tag"
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.6 + index * 0.1 }}
-                      >
-                        {feature}
-                      </motion.span>
-                    ))}
-                  </div>
-                </motion.div>
-                
-                <motion.div 
-                  className="project-details-grid"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.7 }}
-                >
-                  <div className="detail-card">
-                    <span className="detail-icon">📍</span>
-                    <div>
-                      <strong>Location</strong>
-                      <p>{selectedProject.location}</p>
-                    </div>
-                  </div>
-                  <div className="detail-card">
-                    <span className="detail-icon">⏱️</span>
-                    <div>
-                      <strong>Duration</strong>
-                      <p>{selectedProject.duration}</p>
-                    </div>
-                  </div>
-                  <div className="detail-card">
-                    <span className="detail-icon">💰</span>
-                    <div>
-                      <strong>Budget</strong>
-                      <p>{selectedProject.budget}</p>
-                    </div>
-                  </div>
-                  <div className="detail-card">
-                    <span className="detail-icon">📅</span>
-                    <div>
-                      <strong>Year</strong>
-                      <p>{selectedProject.year}</p>
-                    </div>
-                  </div>
-                </motion.div>
-                
-                <motion.div 
-                  className="modal-actions"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 }}
-                >
-                  <motion.button 
-                    className="btn btn-secondary"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setSelectedProject(null)}
-                    style={{ color: '#000' }}
-                  >
-                    Close
-                  </motion.button>
-                  <motion.button 
-                    className="btn btn-primary"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => handleInquireProject(selectedProject)}
-                  >
-                    Contact Us About This Project
-                  </motion.button>
-                </motion.div>
-              </motion.div>
+              </div>
             </motion.div>
-          )}
-        </AnimatePresence>
+          ))}
+        </motion.div>
       </div>
     </motion.div>
   );

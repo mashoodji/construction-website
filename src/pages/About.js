@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import '../styles/About.css';
 
 // Import team member images
-import johnSmith from '../assets/images/team/pic1.avif';
-import sarahJohnson from '../assets/images/team/pic2.avif';
-import mikeChen from '../assets/images/team/pic3.avif';
-import emilyDavis from '../assets/images/team/pic4.avif';
+import johnSmith from '../assets/images/team/1.jpg';
+import sarahJohnson from '../assets/images/team/2.png';
+import mikeChen from '../assets/images/team/3.jpg';
+import emilyDavis from '../assets/images/team/4.jpg';
 import davidWilson from '../assets/images/team/pic5.avif';
 
 const About = () => {
@@ -43,7 +43,7 @@ const About = () => {
 
   const teamMembers = [
     { 
-      name: "John Smith", 
+      name: "EHSAN UR REHMAN",
       role: "CEO & Founder", 
       image: johnSmith,
       shortDescription: "20+ years in construction industry",
@@ -55,7 +55,7 @@ const About = () => {
       phone: "+1 (555) 123-4567"
     },
     { 
-      name: "Sarah Johnson", 
+      name: "MARIA NAFEES",
       role: "Project Manager", 
       image: sarahJohnson,
       shortDescription: "Certified PMP with 15 years experience",
@@ -67,7 +67,7 @@ const About = () => {
       phone: "+1 (555) 123-4568"
     },
     { 
-      name: "Mike Chen", 
+      name: "RIZWAN NAZIR ",
       role: "Head Architect", 
       image: mikeChen,
       shortDescription: "Award-winning architectural designer",
@@ -79,7 +79,7 @@ const About = () => {
       phone: "+1 (555) 123-4569"
     },
     { 
-      name: "Emily Davis", 
+      name: "TAHIR ABBAS",
       role: "Quality Control Manager", 
       image: emilyDavis,
       shortDescription: "Ensuring excellence in every project",
@@ -138,35 +138,7 @@ const About = () => {
           </motion.div>
         </motion.div>
 
-        {/* Stats Section */}
-        {/* <motion.div 
-          className="stats-section"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          <div className="stats-grid">
-            <div className="stat-card">
-              <div className="stat-number">20+</div>
-              <div className="stat-label">Years Experience</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">500+</div>
-              <div className="stat-label">Projects Completed</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">50+</div>
-              <div className="stat-label">Professional Team</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">25+</div>
-              <div className="stat-label">Awards Won</div>
-            </div>
-          </div>
-        </motion.div> */}
-        
-        {/* About Sections - Reverted to previous styling */}
+        {/* About Sections */}
         <motion.div 
           className="about-sections"
           variants={containerVariants}
@@ -271,18 +243,18 @@ const About = () => {
         </motion.div>
       </div>
 
-      {/* Team Member Modal */}
+      {/* Team Member Modal - FIXED CLASS NAMES */}
       <AnimatePresence>
         {isModalOpen && selectedMember && (
           <motion.div
-            className="project-modal-overlay"
+            className="team-modal-overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={closeModal}
           >
             <motion.div
-              className="project-modal team-modal"
+              className="team-modal"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
