@@ -36,7 +36,7 @@ const Educational = () => {
       id: 3,
       title: "College Science Block",
       type: "College Building",
-      status: "in-progress",
+      status: "completed",
       year: "2024",
       image: educational3,
     },
@@ -60,8 +60,8 @@ const Educational = () => {
       id: 6,
       title: "Vocational Training Center",
       type: "Training Center",
-      status: "planned",
-      year: "2025",
+      status: "completed",
+      year: "2024",
       image: educational6,
     }
   ];

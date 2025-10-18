@@ -33,7 +33,7 @@ const Industrial = () => {
       id: 3,
       title: "Storage Complex - Kot Lakhpat",
       type: "Storage Facility",
-      status: "in-progress",
+      status: "completed",
       year: "2024",
       image: industrial3,
     },

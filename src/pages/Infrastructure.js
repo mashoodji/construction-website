@@ -52,7 +52,7 @@ const Infrastructure = () => {
       id: 5,
       title: "Flyover Construction - Ferozepur Road",
       type: "Flyover",
-      status: "in-progress",
+      status: "completed",
       year: "2024",
       image: infrastructure5,
     },
@@ -60,7 +60,7 @@ const Infrastructure = () => {
       id: 6,
       title: "Expressway Extension",
       type: "Expressway",
-      status: "planned",
+      status: "completed",
       year: "2025",
       image: infrastructure6,
     }

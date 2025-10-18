@@ -36,7 +36,7 @@ const Road = () => {
       id: 3,
       title: "City Underpass Network",
       type: "Underpass System",
-      status: "in-progress",
+      status: "completed",
       year: "2024",
       image: road3,
     },
@@ -60,7 +60,7 @@ const Road = () => {
       id: 6,
       title: "Smart City Road Network",
       type: "Smart Roads",
-      status: "planned",
+      status: "completed",
       year: "2025",
       image: road6,
     }

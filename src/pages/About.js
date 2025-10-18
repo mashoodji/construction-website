@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import '../styles/About.css';
 
 // Import team member images
-import johnSmith from '../assets/images/team/1.jpg';
-import sarahJohnson from '../assets/images/team/2.png';
-import mikeChen from '../assets/images/team/3.jpg';
-import emilyDavis from '../assets/images/team/4.jpg';
-import davidWilson from '../assets/images/team/pic5.avif';
+import EHSANURREHMAN from '../assets/images/team/1.jpg';
+import MARIANAFEES from '../assets/images/team/2.png';
+import RIZWANNAZIR from '../assets/images/team/3.jpg';
+import TAHIRABBAS from '../assets/images/team/4.jpg';
+import MuftiRaeesAhmed  from '../assets/images/team/5.jpg';
 
 const About = () => {
   const [selectedMember, setSelectedMember] = useState(null);
@@ -44,63 +44,63 @@ const About = () => {
   const teamMembers = [
     { 
       name: "EHSAN UR REHMAN",
-      role: "CEO & Founder", 
-      image: johnSmith,
-      shortDescription: "20+ years in construction industry",
-      fullDescription: "John founded our company with a vision to revolutionize the construction industry. With over two decades of experience, he has led numerous landmark projects across the country. His leadership and innovative approach have been instrumental in our company's growth and success.",
-      education: "MBA - Harvard Business School, Civil Engineering - MIT",
-      specialties: ["Strategic Planning", "Business Development", "Project Financing"],
-      yearsExperience: 25,
-      email: "john.smith@company.com",
-      phone: "+1 (555) 123-4567"
+      role: "RESIDENT ENGINEER", 
+      image: EHSANURREHMAN,
+      shortDescription: "Overseeing on-site construction operations and quality control",
+      fullDescription: "Ehsan brings over two decades of hands-on experience in construction supervision and project execution. As Resident Engineer, he ensures all construction activities comply with design specifications, building codes, and safety standards. His meticulous site management and technical expertise have been instrumental in delivering numerous successful projects on time and within budget.",
+      // education: "MSc Civil Engineering - NED University, PE Licensed, OSHA Certified",
+      specialties: ["Site Supervision", "Quality Control", "Construction Methodology", "Safety Management"],
+      yearsExperience: 20,
+      email: "ehsan.rehman@company.com",
+      phone: "+92 (300) 123-4567"
     },
     { 
       name: "MARIA NAFEES",
-      role: "Project Manager", 
-      image: sarahJohnson,
-      shortDescription: "Certified PMP with 15 years experience",
-      fullDescription: "Sarah brings exceptional organizational skills and attention to detail to every project. She has successfully managed over 50 construction projects ranging from $2M to $50M in budget. Her ability to coordinate teams and manage timelines ensures projects are delivered on time and within budget.",
-      education: "MSc Project Management - Stanford University, PMP Certified",
-      specialties: ["Budget Management", "Team Leadership", "Risk Assessment"],
-      yearsExperience: 15,
-      email: "sarah.johnson@company.com",
-      phone: "+1 (555) 123-4568"
+      role: "HEAD ARCHITECTURE", 
+      image: MARIANAFEES,
+      shortDescription: "Leading architectural design and creative vision",
+      fullDescription: "Maria is an accomplished architect with a passion for innovative design and sustainable architecture. As Head of Architecture, she leads our design team in creating functional, aesthetically pleasing spaces that meet client needs while incorporating modern architectural principles. Her designs seamlessly blend form and function, creating landmarks that stand the test of time.",
+      // education: "MArch - University of Engineering & Technology, LEED AP Certified",
+      specialties: ["Concept Design", "Sustainable Architecture", "3D Visualization", "Space Planning"],
+      yearsExperience: 12,
+      email: "maria.nafees@company.com",
+      phone: "+92 (300) 123-4568"
     },
     { 
-      name: "RIZWAN NAZIR ",
-      role: "Head Architect", 
-      image: mikeChen,
-      shortDescription: "Award-winning architectural designer",
-      fullDescription: "Mike is an internationally recognized architect known for his innovative and sustainable designs. He has received multiple awards including the prestigious Architectural Design Award 2022. His designs blend functionality with aesthetic appeal while maintaining environmental consciousness.",
-      education: "MArch - Columbia University, LEED AP BD+C Certified",
-      specialties: ["Sustainable Design", "3D Modeling", "Urban Planning"],
-      yearsExperience: 18,
-      email: "mike.chen@company.com",
-      phone: "+1 (555) 123-4569"
+      name: "RIZWAN NAZIR",
+      role: "STRUCTURE ENGINEER", 
+      image: RIZWANNAZIR,
+      shortDescription: "Ensuring structural integrity and safety of all projects",
+      fullDescription: "Rizwan is our structural engineering expert with extensive experience in analyzing and designing robust building structures. He specializes in calculating loads, stresses, and strains to ensure our buildings can withstand environmental forces and usage demands. His technical expertise in structural analysis and foundation design guarantees the safety and durability of all our constructions.",
+      // education: "MSc Structural Engineering - UET Lahore, PE Licensed",
+      specialties: ["Structural Analysis", "Seismic Design", "Foundation Engineering", "Load Calculations"],
+      yearsExperience: 15,
+      email: "rizwan.nazir@company.com",
+      phone: "+92 (300) 123-4569"
     },
     { 
       name: "TAHIR ABBAS",
-      role: "Quality Control Manager", 
-      image: emilyDavis,
-      shortDescription: "Ensuring excellence in every project",
-      fullDescription: "Emily oversees all quality assurance processes, ensuring every project meets the highest standards of safety and craftsmanship. She has implemented rigorous quality control systems that have reduced defects by 40% across all our projects. Her meticulous approach guarantees client satisfaction.",
-      education: "BSc Civil Engineering - UC Berkeley, ASQ CQE Certified",
-      specialties: ["Quality Systems", "Safety Compliance", "Materials Testing"],
-      yearsExperience: 12,
-      email: "emily.davis@company.com",
-      phone: "+1 (555) 123-4570"
+      role: "PROCUREMENT MANAGER", 
+      image: TAHIRABBAS,
+      shortDescription: "Managing material sourcing and supply chain operations",
+      fullDescription: "Tahir excels in procurement and supply chain management, ensuring timely availability of quality materials at competitive prices. As Procurement Manager, he develops strategic vendor relationships, negotiates contracts, and maintains optimal inventory levels. His efficient procurement strategies have significantly reduced project costs while maintaining the highest quality standards.",
+      // education: "MBA Supply Chain Management - IBA Karachi, CIPS Certified",
+      specialties: ["Vendor Management", "Contract Negotiation", "Supply Chain Optimization", "Cost Control"],
+      yearsExperience: 10,
+      email: "tahir.abbas@company.com",
+      phone: "+92 (300) 123-4570"
     },
     { 
-      name: "David Wilson", 
-      role: "Lead Engineer", 
-      image: davidWilson,
-      shortDescription: "Structural engineering specialist",
-      fullDescription: "David is our structural engineering expert with extensive experience in complex building designs and seismic analysis. He has worked on numerous high-rise buildings and bridges, ensuring structural integrity and safety. His technical expertise is crucial for our most challenging projects.",
-      education: "PhD Structural Engineering - MIT, PE Licensed",
-      specialties: ["Structural Analysis", "Seismic Design", "Foundation Engineering"],
-      yearsExperience: 20,
-      email: "david.wilson@company.com",
-      phone: "+1 (555) 123-4571"
+      name: "Mufti Raees Ahmed", 
+      role: "Director Marketing & Public Relations", 
+      image: MuftiRaeesAhmed,
+      shortDescription: "Building brand reputation and client relationships",
+      fullDescription: "Mufti Raees Ahmed leads our marketing and public relations efforts with strategic vision and exceptional communication skills. He develops comprehensive marketing strategies that enhance our brand visibility and manages stakeholder relationships. His expertise in digital marketing and public relations has been crucial in expanding our market presence and maintaining our reputation as a trusted construction partner.",
+      // education: "MBA Marketing - LUMS, Digital Marketing Certification",
+      specialties: ["Brand Management", "Digital Marketing", "Stakeholder Relations", "Strategic Communications"],
+      yearsExperience: 8,
+      email: "raees.ahmed@company.com",
+      phone: "+92 (300) 123-4571"
     }
   ];
 
@@ -289,10 +289,10 @@ const About = () => {
                   <p className="modal-description">{selectedMember.fullDescription}</p>
                 </div>
 
-                <div className="modal-section">
+                {/* <div className="modal-section">
                   <h4>Education & Certification</h4>
                   <p className="education-info">{selectedMember.education}</p>
-                </div>
+                </div> */}
 
                 <div className="modal-section">
                   <h4>Areas of Expertise</h4>

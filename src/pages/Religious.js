@@ -36,7 +36,7 @@ const Religious = () => {
       id: 3,
       title: "Friday Mosque - DHA",
       type: "Jamia Mosque",
-      status: "in-progress",
+      status: "completed",
       year: "2024",
       image: religious3,
     },
@@ -60,7 +60,7 @@ const Religious = () => {
       id: 6,
       title: "Grand Mosque - Ring Road",
       type: "Grand Mosque",
-      status: "planned",
+      status: "completed",
       year: "2025",
       image: religious6,
     }

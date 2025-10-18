@@ -36,7 +36,7 @@ const Commercial = () => {
       id: 3,
       title: "Five-Star Hotel Project",
       type: "Hotel",
-      status: "in-progress",
+      status: "completed",
       year: "2024",
       image: commercial3,
     },
@@ -60,7 +60,7 @@ const Commercial = () => {
       id: 6,
       title: "Retail Complex - Ferozepur Road",
       type: "Retail Complex",
-      status: "planned",
+      status: "completed",
       year: "2025",
       image: commercial6,
     }
